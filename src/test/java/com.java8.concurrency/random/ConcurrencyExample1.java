@@ -1,4 +1,4 @@
-package com.java8.concurrency;
+package com.java8.concurrency.random;
 
 import org.junit.Test;
 
@@ -9,13 +9,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class ConcurrencyExample1 {
 
-    public void callRunnable(){
-
-    }
-
     @Test
     public void runnableTest(){
-        System.out.println("hi");
         Runnable runnable = () -> {
             try {
                 String name = Thread.currentThread().getName();
@@ -28,7 +23,8 @@ public class ConcurrencyExample1 {
             }
         };
 
-        Thread thread = new Thread(runnable);
+        Thread t1 = new Thread(runnable);
+        t1.start();
 
     }
 
